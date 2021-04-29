@@ -1,0 +1,38 @@
+<button mat-raised-button routerLink="/loanrequest"> Loan Request Form </button>
+
+<table mat-table [dataSource]="LoanList" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="CustomerNameWithInitial">
+    <th style="color: rgb(216, 20, 20);" mat-header-cell *matHeaderCellDef> Customer Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.CustomerNameWithInitial}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="CustomerAddress">
+    <th style="color: rgb(216, 20, 20);" mat-header-cell *matHeaderCellDef> Address </th>
+    <td mat-cell *matCellDef="let element"> {{element.CustomerAddress}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="CustomerNIC">
+    <th style="color: rgb(216, 20, 20);" mat-header-cell *matHeaderCellDef> NIC Number </th>
+    <td mat-cell *matCellDef="let element"> {{element.CustomerNIC}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="LoanAmount">
+    <th style="color: rgb(216, 20, 20);" mat-header-cell *matHeaderCellDef> Loan Amount </th>
+    <td mat-cell *matCellDef="let element"> Rs. {{element.LoanAmount}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="LoanTerm">
+    <th style="color: rgb(216, 20, 20);" mat-header-cell *matHeaderCellDef> Loan Term </th>
+    <td mat-cell *matCellDef="let element"> {{element.LoanTerm}} Months</td>
+  </ng-container>
+
+  <ng-container matColumnDef="LoanInstallment">
+    <th style="color: rgb(216, 20, 20);" mat-header-cell *matHeaderCellDef> Installment </th>
+    <td mat-cell *matCellDef="let element"> Rs. {{element.LoanInstallment}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+</table>

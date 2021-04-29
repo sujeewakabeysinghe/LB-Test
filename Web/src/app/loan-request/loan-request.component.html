@@ -1,0 +1,62 @@
+<div class="form">
+  <mat-card class="card">
+    <mat-card-content>
+      <mat-card-subtitle style="color: rgb(216, 20, 20);" class="mat-heading">Loan Request Form</mat-card-subtitle>
+      <form class="example-form">
+        <div>
+
+          <mat-form-field class="example-full-width">
+            <mat-label class="card-header">Full Name</mat-label>
+            <input class="card-body" matInput placeholder="Ex : Abeysinghe Mudiyanselage Sujeewa Kumara Abeysinghe" type="text" name="CustomerFullName" [(ngModel)]="CustomerFullName" required>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <mat-label class="card-header">Name with Initials</mat-label>
+            <input class="card-body" matInput placeholder="Ex : A.M.S.K.Abeysinghe" type="text" name="CustomerNameWithInitial" [(ngModel)]="CustomerNameWithInitial" required>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <mat-label class="card-header">NIC Numbere</mat-label>
+            <input class="card-body" matInput placeholder="Ex : 942091990V" type="text" name="CustomerNIC" [(ngModel)]="CustomerNIC" required>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <mat-label class="card-header">Age</mat-label>
+            <input class="card-body" matInput placeholder="Ex : 26" type="number" name="CustomerAge" [(ngModel)]="CustomerAge" required>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <mat-label class="card-header">Address</mat-label>
+            <input class="card-body" matInput placeholder="Ex : 121/Aa, Wattappola, Kandy." type="text" name="CustomerAddress" [(ngModel)]="CustomerAddress" required>
+          </mat-form-field>
+
+          <table class="example-full-width" cellspacing="0"><tr>
+            <td>
+              <mat-form-field class="example-full-width">
+                <mat-label class="card-header">Loan Amount</mat-label>
+                <input class="card-body" matInput placeholder="Ex : 1000000" type="number" name="LoanAmount" [(ngModel)]="LoanAmount" required>
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="example-full-width">
+                <mat-label class="card-header">Interest Rate</mat-label>
+                <input class="card-body" matInput placeholder="Ex : 10" type="number" name="LoanInterest" [(ngModel)]="LoanInterest" required>
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="example-full-width">
+                <mat-label class="card-header">Loan Terms</mat-label>
+                <input class="card-body" matInput placeholder="Ex : 12" type="number" name="LoanTerm" [(ngModel)]="LoanTerm" required>
+              </mat-form-field>
+            </td>
+          </tr></table>
+        </div>
+      </form>
+
+    </mat-card-content>
+    <p style="font-size:medium;color: #656565;">Your Installment is Rs. {{(LoanAmount*((LoanInterest+100)/100))/LoanTerm | number: '.0-0'}}</p>
+    <br>
+    <button mat-raised-button (click)='submitRequest()'> Apply </button>
+    <button style="margin-left: 5px;" mat-raised-button  routerLink="/loanlist"> Cancel </button>
+  </mat-card>
+</div>

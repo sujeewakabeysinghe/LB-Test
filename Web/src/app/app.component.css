@@ -1,0 +1,9 @@
+.toolbar {
+  justify-content: space-between;
+}
+.name {
+  font-size: 17px !important;
+}
+.buttons {
+  font-size: 12px !important;
+}
