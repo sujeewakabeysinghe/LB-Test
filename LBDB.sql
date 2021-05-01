@@ -1,3 +1,5 @@
+create database LBDB
+
 create table dbo.Loans(
 LoanID int identity(1,1),
 CustomerFullName varchar(1000),
